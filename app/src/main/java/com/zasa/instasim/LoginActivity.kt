@@ -14,7 +14,10 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        val auth = FirebaseAuth.getInstance()
+        if(auth.currentUser != null){
+            goPostActivity()
+        }
         btnLogin.setOnClickListener {
 
             btnLogin.isEnabled = false
@@ -26,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             //Firebase authentication checking
-            val auth = FirebaseAuth.getInstance()
+
             auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
                 btnLogin.isEnabled = true
                 if (task.isSuccessful){
