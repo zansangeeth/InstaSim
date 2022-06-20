@@ -1,5 +1,6 @@
 package com.zasa.instasim
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -42,5 +43,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun goPostActivity() {
         Log.i(TAG, "goPostActivity")
+        val intent = Intent(this, PostActivity::class.java)
+        startActivity(intent)
     }
 }
