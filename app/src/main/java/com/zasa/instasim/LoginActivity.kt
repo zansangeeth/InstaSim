@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
 
+            btnLogin.isEnabled = false
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
 
@@ -26,8 +27,9 @@ class LoginActivity : AppCompatActivity() {
             }
             //Firebase authentication checking
             val auth = FirebaseAuth.getInstance()
-            auth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
-                    task -> if (task.isSuccessful){
+            auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+                btnLogin.isEnabled = true
+                if (task.isSuccessful){
                 Toast.makeText(this, "Success!!", Toast.LENGTH_SHORT).show()
                 goPostActivity()
             }else{
@@ -45,5 +47,6 @@ class LoginActivity : AppCompatActivity() {
         Log.i(TAG, "goPostActivity")
         val intent = Intent(this, PostActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }
