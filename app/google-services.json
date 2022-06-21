@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "876641000132",
+    "project_id": "instasim-586cd",
+    "storage_bucket": "instasim-586cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876641000132:android:fa0a1755b37a3858ac0791",
+        "android_client_info": {
+          "package_name": "com.zasa.instasim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876641000132-80gui254i8tdvpe2h0nvphvn5m53jlqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtopoTHwWpC4pHH7b6RUm19idQYHqxPjk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876641000132-80gui254i8tdvpe2h0nvphvn5m53jlqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
