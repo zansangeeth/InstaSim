@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/InstaSim/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/InstaSim/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/InstaSim/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/InstaSim/app/src/main/res/menu/menu_posts.xml" value="0.20863616930312098" />
+        <entry key="..\:/InstaSim/app/src/main/res/menu/menu_profile.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

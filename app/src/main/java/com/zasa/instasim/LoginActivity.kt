@@ -14,31 +14,34 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         val auth = FirebaseAuth.getInstance()
-        if(auth.currentUser != null){
+        if (auth.currentUser != null) {
             goPostActivity()
         }
+
         btnLogin.setOnClickListener {
 
             btnLogin.isEnabled = false
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
 
-            if (email.isEmpty() || password.isEmpty()){
-                Toast.makeText(this, "email/password cannot be empty", Toast.LENGTH_SHORT).show()
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "email/password cannot be empty", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
-            //Firebase authentication checking
 
-            auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 btnLogin.isEnabled = true
-                if (task.isSuccessful){
-                Toast.makeText(this, "Success!!", Toast.LENGTH_SHORT).show()
-                goPostActivity()
-            }else{
-                Log.e(TAG, "signInWithEmailFailed", task.exception)
-                Toast.makeText(this,"Authentication Failed", Toast.LENGTH_SHORT).show()
-            }
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Success!!", Toast.LENGTH_SHORT).show()
+                    goPostActivity()
+                } else {
+                    Log.e(TAG, "signInWithEmailFailed", task.exception)
+                    Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT)
+                        .show()
+                }
 
             }
         }
