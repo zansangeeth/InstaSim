@@ -7,7 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
+import com.zasa.instasim.models.Post
 
 private const val TAG = "PostActivity"
 class PostActivity : AppCompatActivity() {
@@ -24,8 +24,9 @@ class PostActivity : AppCompatActivity() {
                 Log.i(TAG, "Exception when getting data", error)
                 return@addSnapshotListener
             }
-            for (document in snapshot.documents){
-                Log.i(TAG, "Document ${document.id} : ${document.data}")
+            val postList = snapshot.toObjects(Post::class.java)
+            for (post in postList){
+                Log.i(TAG, "Post $post")
             }
         }
 
