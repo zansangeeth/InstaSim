@@ -13,8 +13,9 @@ import com.zasa.instasim.models.Post
 import kotlinx.android.synthetic.main.activity_post.*
 
 private const val TAG = "PostActivity"
+private const val EXTRA_USERNAME = "EXTRA_USERNAME"
 
-class PostActivity : AppCompatActivity() {
+open class PostActivity : AppCompatActivity() {
 
     private lateinit var firebaseDb: FirebaseFirestore
     private lateinit var posts : MutableList<Post>
@@ -38,10 +39,15 @@ class PostActivity : AppCompatActivity() {
         rvPosts.adapter = adapter
         rvPosts.layoutManager = LinearLayoutManager(this)
 
-        val postReference = firebaseDb
+        var postReference = firebaseDb
             .collection("posts")
             .limit(20)
             .orderBy("creation_time_in_ms", Query.Direction.DESCENDING)
+
+        val username = intent.getStringExtra(EXTRA_USERNAME)
+        if (username != null){
+            postReference = postReference.whereEqualTo("user.username", username)
+        }
         postReference.addSnapshotListener { snapshot, error ->
             if (error != null || snapshot == null) {
                 Log.i(TAG, "Exception when getting data", error)
@@ -66,6 +72,7 @@ class PostActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.mProfile) {
             val profileIntent = Intent(this, ProfileActivity::class.java)
+            profileIntent.putExtra(EXTRA_USERNAME, "sangeeth")
             startActivity(profileIntent)
         }
         return super.onOptionsItemSelected(item)
