@@ -60,6 +60,7 @@ open class PostActivity : AppCompatActivity() {
 
         val username = intent.getStringExtra(EXTRA_USERNAME)
         if (username != null){
+            supportActionBar?.title = username
             postReference = postReference.whereEqualTo("user.username", username)
         }
         postReference.addSnapshotListener { snapshot, error ->
