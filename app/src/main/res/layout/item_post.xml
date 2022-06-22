@@ -27,12 +27,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="30 Minutes Ago"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <ImageView
             android:id="@+id/ivPost"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:layout_marginTop="4dp"
             android:scaleType="centerCrop"
             tools:srcCompat="@tools:sample/avatars" />
 
@@ -40,6 +41,7 @@
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:textSize="16sp"
             tools:text="Lovely Nature" />
     </LinearLayout>

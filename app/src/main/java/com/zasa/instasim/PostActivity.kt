@@ -25,7 +25,7 @@ class PostActivity : AppCompatActivity() {
         setContentView(R.layout.activity_post)
 
         //create a layout file that represent the one post - DONE
-        
+
         firebaseDb = FirebaseFirestore.getInstance()
 
         // create data source
