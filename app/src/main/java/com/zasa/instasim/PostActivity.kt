@@ -77,6 +77,11 @@ open class PostActivity : AppCompatActivity() {
             }
         }
 
+        fabCreate.setOnClickListener {
+            val createIntent = Intent(this, CreateActivity::class.java)
+            startActivity(createIntent)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
