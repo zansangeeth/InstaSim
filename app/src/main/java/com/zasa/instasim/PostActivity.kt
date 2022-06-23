@@ -26,6 +26,7 @@ open class PostActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_InstaSim)
         setContentView(R.layout.activity_post)
 
         //create a layout file that represent the one post - DONE

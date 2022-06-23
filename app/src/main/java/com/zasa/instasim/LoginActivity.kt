@@ -13,6 +13,7 @@ private const val TAG = "LoginActivity"
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_InstaSim)
         setContentView(R.layout.activity_login)
 
         val auth = FirebaseAuth.getInstance()

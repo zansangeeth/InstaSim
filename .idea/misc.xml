@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/InstaSim/app/src/main/res/drawable/ic_instagram_seeklogo_com.xml" value="0.124" />
+        <entry key="..\:/InstaSim/app/src/main/res/drawable/splash_image.xml" value="0.124" />
         <entry key="..\:/InstaSim/app/src/main/res/layout/activity_create.xml" value="0.25416666666666665" />
         <entry key="..\:/InstaSim/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/InstaSim/app/src/main/res/layout/activity_main.xml" value="0.264" />
